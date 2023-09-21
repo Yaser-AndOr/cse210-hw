@@ -5,24 +5,23 @@ class Program
     static void Main(string[] args)
     {
         //creation of the empty list
-        List <int> numbers;
-        numbers = new List<int>();
-        int number = -1;
-        while (number != 0)
+        List <int> numbers = new List<int>();
+        int usernum = -1;
+        while (usernum != 0)
         {
             Console.WriteLine("Enter a list of numbers, type 0 when finished");
             Console.Write("Enter number: ");
             
             string answer = Console.ReadLine();
-            number = int.Parse(answer);
-            if (number != 0)
+            usernum = int.Parse(answer);
+            if (usernum != 0)
             {
-                numbers.Add (number);
+                numbers.Add (usernum);
             }
         }
         
         int sum = 0;
-        foreach (int i in numbers)
+        foreach (int number in numbers)
         {
             sum += number;
         }
@@ -32,9 +31,9 @@ class Program
         Console.WriteLine($"The average is {average}");
 
         int max = numbers[0];
-        foreach (int j in numbers)
+        foreach (int number in numbers)
         {
-            if (j > max)
+            if (number > max)
             {
                 max = number;
             }

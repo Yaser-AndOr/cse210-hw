@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        //creation of the empty list
         List <int> numbers;
         numbers = new List<int>();
         int number = -1;

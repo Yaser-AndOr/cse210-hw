@@ -1,6 +1,6 @@
 using System;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -24,7 +24,8 @@ class Program
         
         myResume.Display();
     }
-    public class Job
+}
+public class Job
     {
         public string _jobtitle;
         public string _company;
@@ -35,7 +36,13 @@ class Program
     public class Resume
     {
         public string _name;
-        List<Job> _jobs = new List<Job>();
+        List<Job> _jobs;
+        public Resume(){
+            _jobs = new List<job>();
+        }
+        public void Display(){
+            foreach(Job job in _jobs){
+                Console.println($"Titulo: {job._jobtittle}, Company: {job._company}, StartYear: {job._startYear}, AndYear: {job._andYear}.");
+            }
+        }
     }
-
-}

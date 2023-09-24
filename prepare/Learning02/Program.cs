@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 public class Program
 {
@@ -21,28 +23,42 @@ public class Program
 
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
-        
+
         myResume.Display();
+        Console.ReadKey();
     }
 }
 public class Job
+{
+    public string _jobtitle;
+    public string _company;
+    public int _startYear;
+    public int _endYear;
+    public void Display()
     {
-        public string _jobtitle;
-        public string _company;
-        public int _startYear;
-        public int _endYear;
+        Console.WriteLine($"Titulo: {_jobtitle}\n" +
+            $"Company: {_company}\n" +
+            $"StartYear: {_startYear}\n" +
+            $"AndYear: {_endYear}\n");
     }
+}
 
-    public class Resume
+public class Resume
+{
+    public string _name;
+    public List<Job> _jobs;
+    public Resume()
     {
-        public string _name;
-        List<Job> _jobs;
-        public Resume(){
-            _jobs = new List<job>();
-        }
-        public void Display(){
-            foreach(Job job in _jobs){
-                Console.println($"Titulo: {job._jobtittle}, Company: {job._company}, StartYear: {job._startYear}, AndYear: {job._andYear}.");
-            }
+        _jobs = new List<Job>();
+    }
+    public void Display()
+    {
+        Console.WriteLine($"Name: {_name}\nJobs:\n");
+        int i = 0;
+        foreach (Job job in _jobs)
+        {
+            Console.WriteLine($"Job {i++}:");
+            job.Display();
         }
     }
+}
